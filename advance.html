@@ -3,30 +3,60 @@
     <head>
         <title>HTML advance notes</title>
         <meta charset="UTF-8">
+        <style>
+            /* cascading style sheets
+            1. selecter => says what to change
+            2. declaration
+                a. property => what about the element to change\
+                b. value => how to change it
+            */
+            body{
+                color: rgb(255, 225, 0);
+                font-family: "comic sans MS", "comic sans", cursive;
+                background-color: rgb(0, 234, 255);
+                border: inset 10px #ff01cc;
+            }
+            h1{
+                text-align: center;
+            }
+            #even{
+                color: rgb(71, 67, 13);
+                text-decoration: underline;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            .lists{
+                width: 500px;
+                background-color:ivory;
+                border-radius: 10px;
+                font-size: 2rem;
+            }
+        </style>
     </head>
     <body>
         <h1>HTML Advance Notes</h1>
+        <div class="lists">
         <h3>Lists: </h3>
         <ol type="a">
             <li>George</li>
-            <li>George Washington</li>
+            <li id="even">George Washington</li>
             <li>Curious George</li>
-            <li>George the pig</li>
+            <li id="even">George the pig</li>
         </ol>
         <ul>
             <li><a href="https://en.wikipedia.org/wiki/Banana"target="blank"> apple</a></li>
-            <li>orange</li>
+            <li id="even">orange</li>
             <li>banana</li>
-            <li>peach</li>
+            <li id="even">peach</li>
         </ul>
         <dl>
             <dt>Autumn</dt>
             <dd>Halloween</dd>
-            <dd>Thanksgiving</dd>
+            <dd id="even">Thanksgiving</dd>
             <dt>Winter</dt>
-            <dd>Christmas</dd>
+            <dd id="even">Christmas</dd>
             <dd>New years</dd>
         </dl>
+        </div>
         <h3>Attribues: </h3>
         <div>
         <a href="https://freepngimg.com/png/103527-question-mark/icon"target="_blank"><img src="https://freepngimg.com/thumb/question_mark/103527-question-mark.png" alt="question mark" width="100px"></a>
