@@ -40,14 +40,14 @@
             #think{
                 text-align: right;
                 background-color: black;
-
-                border-radius: 20px;
-
+                border-radius: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
             }
-            #being{
-                background-color: black;
-                border: solid 5px rgb(255, 238, 141);
+            #being2{
                 border-radius: 20px;
+                padding-right: 10px;
+                padding-left: 10px;
             }
             #think2{
                 display: flex;
@@ -67,13 +67,30 @@
                 border: solid 5px rgb(0, 0, 0);
                 border-radius: 15px;
             }
+            #being{
+                text-align: right;
+                display: flex;
+                flex-wrap: nowrap;
+                border: solid 5px rgb(255, 238, 141);
+                border-radius: 20px;
+                background-color: black;
+            }
+            #who{
+                width: 200px;
+                border: solid 5px rgb(255, 238, 141);
+                border-radius: 20px;
+            }
         </style>
     </head>
     <body>
         <h1>Curiosity</h1>
         <div id="being">
-        <h2>Being Curious</h2>
-        <p>Being curious is a major part of many peoples lifes, many inventions too have been made because someone thought "why", "what", "who", "when", and/or "where". <br> People have the saying "Curiosity killed the cat" which can be true since curiosity could lead to a dangerous scenario but always keep in mind that being curious is how you learn. </p>
+            <h2>Being Curious</h2>
+            <p>Being curious is a major part of many peoples lifes, many inventions too have been made because someone thought "why", "what", "who", "when", and/or "where". <br> People have the saying "Curiosity killed the cat" which can be true since curiosity could lead to a dangerous scenario but always keep in mind that being curious is how you learn. </p>
+        <div id="being2">
+        <img id="image1" src="https://pix4free.org/assets/library/2021-06-16/originals/curiosity.jpg" alt="guy pointing at curiosity">
+        <h6><a href="https://thebluediamondgallery.com/finger01/c/curiosity.html"target="_blank">Image from: thebluediamondgallery.com</a></h6>
+        </div>
         </div>
         <br>
         <div id="think2">
@@ -94,13 +111,25 @@
             <li>Why?</li>
         </ul>
         </div>
-        <img id="image1" src="https://pix4free.org/assets/library/2021-06-16/originals/curiosity.jpg" alt="guy pointing at curiosity">
-        <h6><a href="https://thebluediamondgallery.com/finger01/c/curiosity.html"target="_blank">Image from: thebluediamondgallery.com</a></h6>
+
         <div id="buttons">
             <button>cool button</button>
             <button>stupid button</button>
             <button>button</button>
             <button>amazing button</button>
+            <script>
+                let theW = ["https://static.vecteezy.com/system/resources/previews/023/554/761/non_2x/word-what-with-question-mark-on-a-transparent-background-free-png.png", "https://static.vecteezy.com/system/resources/previews/023/556/558/non_2x/word-where-with-question-mark-on-a-transparent-background-free-png.png", "https://www.vecteezy.com/png/23554763-word-why-with-question-mark-on-a-transparent-background", "https://static.vecteezy.com/system/resources/thumbnails/023/554/759/small_2x/word-who-with-question-mark-on-a-transparent-background-free-png.png"]
+                
+                let currentimage = 0
+                function rotate(){
+                    currentimage += 1
+                    document.getElementById("who").src = theW[currentimage]
+                    if (currentimage >5){
+                        currentimage = 0
+                    }
+                }
+            </script>
         </div>
+        <img id="who" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyMAOALlr5MnCQC_vB_HuvmC6Qk1sScmWujHZyRxIvUA&s=10" alt="who" onmouseout="rotate()">
     </body>
 </html>

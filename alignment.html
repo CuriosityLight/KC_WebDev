@@ -16,7 +16,7 @@
                 gap: 5px;
             }
             #flex-wrapper{
-                display: flex;
+                display: none;
                 flex-direction: row;
                 justify-content: space-evenly;
                 align-items: center;
@@ -26,13 +26,17 @@
                 margin-top: 25px;
                 padding: 50px;
             }
+            img{
+                width: 200px;
+            }
         </style>
     </head>
     <body>
         <h1>alignment notes</h1>
+        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2025/03/Bunch-of-bananas-00871a2.jpg?quality=90&resize=440,400" alt="banana" id="banana" onmouseout="rotate()">
         <div id="grid-wrapper">
-            <div id="box">
-                <p>box1</p>
+            <div id="box" onmousewheel="ShowHide()">
+                <p id="text">show more</p>
             </div>
             <div id="box">
                 <p>box2</p>
@@ -58,8 +62,34 @@
                 <p>box8</p>
             </div>
         </div>
-        <button>click me now...</button>
+        <input type="color" id="newColor">
+        <br>
+        <button onclick="changeColor()">click me now...</button>
+        <script>
+            let images = ["https://cdn.mos.cms.futurecdn.net/v2/t:0,l:0,cw:2117,ch:1191,q:80,w:2117/YDFk8cgmSKu8VYFVedUQ8j.jpg", "https://media.istockphoto.com/id/1291262112/photo/banana.jpg?s=612x612&w=0&k=20&c=Na8FBcsTuhCRyuWLmbCV1FwOkvWLWFeVfQT-pd6tXk8=", "https://cdn.mos.cms.futurecdn.net/kzMYKaqQhtY2EzL7GABdah.jpg", "https://images.immediate.co.uk/production/volatile/sites/30/2025/03/Bunch-of-bananas-00871a2.jpg?quality=90&resize=440,400"]
+            let currentimage = 0
+            function rotate(){
+                currentimage += 1
+                document.getElementById("banana").src = images[currentimage]
+                if (currentimage >3){
+                    currentimage = 0
+                }
+            }
+            function changeColor(){
+                let currentColor = document.getElementById("newColor").value
+                document.getElementById("box").style.backgroundColor = currentColor
+            }
+            function ShowHide(){
+                let item = document.getElementById("flex-wrapper")
+                if(item.style.display == "flex"){
+                    item.style.display = "none"
+                    document.getElementById("text").innerHTML = "show more"
+                }else{
+                    item.style.display = "flex"
+                    document.getElementById("text").innerHTML = "show less"
+                }
+            }
+            
+        </script>
     </body>
-
-
 </html>
