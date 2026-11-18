@@ -60,7 +60,9 @@
                 background-color: black;
                 border: solid 5px rgb(255, 238, 141);
                 border-radius: 20px;
-                width: 200px;
+                width: 225px;
+                display: none;
+                flex-wrap: wrap;
             }
             #image2{
                 width: 200px;
@@ -77,8 +79,6 @@
             }
             #who{
                 width: 200px;
-                border: solid 5px rgb(255, 238, 141);
-                border-radius: 20px;
             }
         </style>
     </head>
@@ -101,6 +101,12 @@
         </div>
         </div>
         <h6><a href="https://picryl.com/media/question-mark-question-response-7bbed1"target="_blank">Image from picryl.com</a></h6>
+        <div id="buttons">
+            <button>cool button</button>
+            <button>stupid button</button>
+            <button onclick="ShowHide()">button</button>
+            <button>amazing button</button>
+        </div>
         <div id="theWs">
         <h2><a href="https://en.wikipedia.org/wiki/Five_Ws"target="_blank">The 5 Ws</a></h3>
         <ul>
@@ -110,26 +116,31 @@
             <li>Where?</li>
             <li>Why?</li>
         </ul>
+        <img id="who" src="https://static.vecteezy.com/system/resources/thumbnails/023/554/759/small_2x/word-who-with-question-mark-on-a-transparent-background-free-png.png" alt="who" onmouseout="rotate()">
         </div>
 
-        <div id="buttons">
-            <button>cool button</button>
-            <button>stupid button</button>
-            <button>button</button>
-            <button>amazing button</button>
+
+
             <script>
-                let theW = ["https://static.vecteezy.com/system/resources/previews/023/554/761/non_2x/word-what-with-question-mark-on-a-transparent-background-free-png.png", "https://static.vecteezy.com/system/resources/previews/023/556/558/non_2x/word-where-with-question-mark-on-a-transparent-background-free-png.png", "https://www.vecteezy.com/png/23554763-word-why-with-question-mark-on-a-transparent-background", "https://static.vecteezy.com/system/resources/thumbnails/023/554/759/small_2x/word-who-with-question-mark-on-a-transparent-background-free-png.png"]
+                let theW = ["https://static.vecteezy.com/system/resources/thumbnails/023/554/759/small_2x/word-who-with-question-mark-on-a-transparent-background-free-png.png", "https://static.vecteezy.com/system/resources/previews/023/554/761/non_2x/word-what-with-question-mark-on-a-transparent-background-free-png.png", "https://static.vecteezy.com/system/resources/previews/023/556/557/non_2x/word-when-with-question-mark-on-a-transparent-background-free-png.png", "https://static.vecteezy.com/system/resources/previews/023/556/558/non_2x/word-where-with-question-mark-on-a-transparent-background-free-png.png", "vecteezy_word-why-with-question-mark-on-a-transparent-background_23554763.png", "https://static.vecteezy.com/system/resources/thumbnails/023/554/759/small_2x/word-who-with-question-mark-on-a-transparent-background-free-png.png"]
                 
                 let currentimage = 0
                 function rotate(){
                     currentimage += 1
                     document.getElementById("who").src = theW[currentimage]
-                    if (currentimage >5){
+                    if (currentimage > 4){
                         currentimage = 0
                     }
                 }
+                function ShowHide(){
+                    let item = document.getElementById("theWs")
+                    if(item.style.display == "flex"){
+                        item.style.display = "none"
+                    }else{
+                        item.style.display = "flex"
+                    }
+                }
             </script>
-        </div>
-        <img id="who" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyMAOALlr5MnCQC_vB_HuvmC6Qk1sScmWujHZyRxIvUA&s=10" alt="who" onmouseout="rotate()">
+
     </body>
 </html>
