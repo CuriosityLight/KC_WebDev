@@ -8,22 +8,131 @@
                 width: 20px;
                 
             }
+            body{
+                font-family: "comic sans MS", cursive;
+                color: rgb(158, 218, 255);
+                background-color: rgb(34, 34, 72);
+            }
+            #list{
+                font-weight: bold;
+                font-size: large;
+            }
+            #top{
+                display:flex;
+                background-color: rgb(0, 45, 75);
+                border: solid 10px rgb(167, 255, 255);
+                border-radius: 20px;
+            }
+            #image5432{
+                width: 200px;
+                height: 200px;
+                border: solid rgb(0, 45, 75) 10px;
+                border-radius: 20px;
+            }
+            #bottom{
+                display: none;
+                background-color: rgb(0, 45, 75);
+                border: solid 10px rgb(167, 255, 255);
+                border-radius: 20px;
+                padding: 10px;
+            }
+            #image9873{
+                width: 250px;
+                height: 0%;
+                border: solid rgba(0, 45, 75, 0.604) 10px;
+                border-radius: 20px;
+            }
+            #text9764{
+                padding-right: 10px;
+                text-align: right;
+            }
+            #text9765{
+                padding-left: 10px;
+                text-align: left;
+            }
+            #image123{
+                display: none;
+            }
+            button{
+                background-color: rgb(0, 45, 75);
+                color: rgb(158, 218, 255);
+                border: solid rgb(167, 255, 255) 5px;
+                border-radius: 5px;
+                width: 150px;
+                height: 70px;
+                font-size: large;
+                margin-left: 10px;
+                font-family: "comic sans MS", cursive;
+            }
+            a:visited{
+                color: rgb(121, 54, 255);
+            }
+            a:link{
+                color: rgb(42, 149, 165);
+                text-decoration: none;
+            }
+            a:hover{
+                color: rgb(24, 255, 213);
+            }
+            #BottomBorder{
+                border: solid 5px rgb(167, 255, 255);
+                border-radius: 10px;
+            }
         </style>
     </head>
     <body>
-        <h1>Snowbasin Resort</h1>
-        <p></p>
-        <ul>
-            <li>reason</li>
-            <li>reason</li>
-            <li>reason</li>
-            <li>reason</li>
-        </ul>
-        <div id="image1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0PBSC5AA9ST2nON-ehHEXr9lfmP6NxLmc020K8OPJ2xcdqz07UcMSeFE&s=10" alt="beautful view">
-        <img src="https://cdn.mos.cms.futurecdn.net/BL7VM96syq2hLwkLn4QBr9.jpg" alt="tree in snow">
-        <img src="https://media.istockphoto.com/id/2194804956/photo/wasatch-mountains-at-snowbasin-ski-resort-in-ogden-utah.jpg?s=612x612&w=0&k=20&c=x8swls8jm4SFpeUde-gY5LLafBUMoxbo7CTgMJjra3g=" alt="sun on mountain">
+        <h1><a href="https://www.snowbasin.com/" target="_blank"> Snowbasin Resort</a></h1>
+        <div id="top">
+        <img id="image5432" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0PBSC5AA9ST2nON-ehHEXr9lfmP6NxLmc020K8OPJ2xcdqz07UcMSeFE&s=10" alt="beautful view" width="150px">
+        <h2>About Snowbsasin Resort</h2>
+        <div id="text9764">
+        <p>In huntsville, Utah, rests Snowbasin Resort whihc is an all season resort that is usually is stayed at for skiing sinces its right next to over 3,000 acres of skiable area. Snowbasin resort doesnt just have skiing, snce its an all season resort it also has activities for the summer such as mini golf, hiking and even yoga. Now you may think "since its on a mountain it will be difficult to get to" well actually its one of the easiest drives to get to from some places such as the airport in Salt Lake.</p>
         </div>
-        <button>button</button>
+        </div>
+        <br>
+        <button id="button1" onclick="ShowHide()">Show More</button>
+        <br>
+        <br>
+        <div id="bottom">
+        <h2>Reasons why you should go to Snowbasin Resort.</h2>
+        <div id="text9765">
+        <dl>
+            <dt id="list">Skiing</dt>
+            <dd>Skiing is fun even if you go on harder roads or easier. Its fun for everyone and its the main thing people go for in snowbasin resort in the winter.</dd>
+            <dt id="list">Food</dt>
+            <dd>since its a resort theres obviously gonna food, and even if youre staying there and not skiing or doing any other activites you can still eat food. </dd>
+            <dt id="list">Summer Activities</dt>
+            <dd>Since its an all year resort, the only thing isnt just skiing since you cant ski in the summer. Theres other activites like hiking, biking, and even Mini-Golf.</dd>
+            <dt id="list">Family</dt>
+            <dd>Snowbasin resort is one of the if not the best family resort in utah since it has big hotels and a wide area for family.</dd>
+        </dl>
+        </div>
+        <img id="image9873" src="https://cdn.mos.cms.futurecdn.net/BL7VM96syq2hLwkLn4QBr9.jpg" alt="tree in snow" onmouseout="rotate()">
+        </div>
+        <br>
+        <br>
+        <br>
+        <script>
+            let images = ["https://cdn.mos.cms.futurecdn.net/BL7VM96syq2hLwkLn4QBr9.jpg", "https://media.istockphoto.com/id/2194804956/photo/wasatch-mountains-at-snowbasin-ski-resort-in-ogden-utah.jpg?s=612x612&w=0&k=20&c=x8swls8jm4SFpeUde-gY5LLafBUMoxbo7CTgMJjra3g="]
+            let currentimage = -1
+            function rotate(){
+                currentimage += 1
+                document.getElementById("image9873").src = images[currentimage]
+                if (currentimage >0){
+                    currentimage = -1
+                }
+            }
+            function ShowHide(){
+                let item = document.getElementById("bottom")
+                if(item.style.display == "flex"){
+                    item.style.display = "none"
+                    document.getElementById("button1").innerHTML = "Show More"
+                }else{
+                    item.style.display = "flex"
+                    document.getElementById("button1").innerHTML = "Show Less"
+                    }
+                }
+        </script>
+        <p id="BottomBorder"> </p>
     </body>
 </html>
